@@ -1,0 +1,63 @@
+# ============================================================
+# Job Search Keywords Configuration
+# ============================================================
+# Each keyword group defines a search query combination.
+# The agent will search every keyword against every location.
+
+primary_keywords:
+  - "DevOps Engineer"
+  - "Kubernetes Engineer"
+  - "Platform Engineer"
+  - "Site Reliability Engineer"
+  - "SRE"
+  - "Cloud Engineer"
+  - "Python Developer"
+  - "Ansible Engineer"
+  - "Automation Engineer"
+  - "GoLang Developer"
+  - "Go Developer"
+  - "Infrastructure Engineer"
+  - "Cloud Automation Engineer"
+  - "DevSecOps Engineer"
+  - "MLOps Engineer"
+
+secondary_keywords:
+  # Used to boost relevance scoring — job must mention at least 2 of these
+  - "Kubernetes"
+  - "Docker"
+  - "Helm"
+  - "Terraform"
+  - "Ansible"
+  - "Python"
+  - "Go"
+  - "Golang"
+  - "CI/CD"
+  - "Jenkins"
+  - "GitLab CI"
+  - "GitHub Actions"
+  - "ArgoCD"
+  - "Prometheus"
+  - "Grafana"
+  - "AWS"
+  - "GCP"
+  - "Azure"
+  - "Linux"
+  - "Bash"
+  - "Infrastructure as Code"
+  - "IaC"
+  - "Microservices"
+  - "API"
+  - "REST"
+  - "OpenShift"
+  - "EKS"
+  - "GKE"
+  - "AKS"
+
+# Hard filters — skip job if it matches any of these
+exclude_keywords:
+  - "intern"
+  - "junior"
+  - "fresher"
+  - "0-1 years"
+  - "entry level"
+  - "unpaid"

@@ -1,0 +1,72 @@
+# ============================================================
+# Job Agent - Main Configuration
+# ============================================================
+
+agent:
+  name: "LinkedIn Job Agent"
+  version: "1.0.0"
+  approval_email: "raulo.raj@gmail.com"
+  max_jobs_per_run: 20          # Max jobs to process per run
+  apply_limit_per_day: 5        # Max applications per day (stay safe)
+  approval_timeout_hours: 24    # Hours to wait for approval before skipping
+
+search:
+  # Locations (searched in this order)
+  locations:
+    uae:
+      - "Dubai, UAE"
+      - "Abu Dhabi, UAE"
+      - "Sharjah, UAE"
+      - "United Arab Emirates"
+    global:
+      - "Remote"
+      - "United Kingdom"
+      - "United States"
+      - "Germany"
+      - "Netherlands"
+      - "Singapore"
+      - "Canada"
+
+  # Job date filter (only fetch jobs posted within N days)
+  posted_within_days: 7
+
+  # Experience levels: internship, entry, associate, mid-senior, director, executive
+  experience_levels:
+    - "mid-senior"
+    - "associate"
+
+  # Job types: full-time, part-time, contract, temporary, internship
+  job_types:
+    - "full-time"
+    - "contract"
+
+  # Minimum match score (0-100) to consider a job worth applying
+  min_relevance_score: 60
+
+resume:
+  base_resume_path: "data/resumes/base_resume.docx"
+  tailored_output_dir: "data/tailored"
+  ai_model: "claude-sonnet-4-20250514"
+
+  # Sections the AI is allowed to modify
+  tailorable_sections:
+    - "summary"
+    - "skills"
+    - "experience_bullets"
+
+  # Sections that must never change
+  locked_sections:
+    - "personal_info"
+    - "education"
+    - "certifications"
+
+notifications:
+  from_name: "Job Agent Bot"
+  subject_template: "🤖 Job Match: {job_title} at {company} — Approve?"
+  approval_link_base: "http://localhost:8080/approve"  # Change to your server/ngrok URL
+
+logging:
+  level: "INFO"
+  log_file: "data/logs/agent.log"
+  max_log_size_mb: 10
+  backup_count: 5

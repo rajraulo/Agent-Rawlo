@@ -1,0 +1,99 @@
+name: 🤖 Daily Job Search & Apply
+
+on:
+  # Run daily at 8:00 AM UAE time (UTC+4 = 4:00 AM UTC)
+  schedule:
+    - cron: '0 4 * * *'
+
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+          - full          # search + email + apply approved
+          - search-only   # only search and send emails
+          - apply-only    # only apply to already-approved jobs
+
+jobs:
+  job-agent:
+    name: Run Job Agent
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Chrome & ChromeDriver
+        run: |
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          pip install webdriver-manager
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore job database from cache
+        uses: actions/cache@v4
+        with:
+          path: data/jobs/
+          key: job-db-${{ github.run_id }}
+          restore-keys: |
+            job-db-
+
+      - name: Restore applied jobs log
+        uses: actions/cache@v4
+        with:
+          path: data/logs/
+          key: job-logs-${{ github.run_id }}
+          restore-keys: |
+            job-logs-
+
+      - name: Run Job Agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LI_AT:             ${{ secrets.LI_AT }}
+          SMTP_HOST:         smtp.gmail.com
+          SMTP_PORT:         587
+          SMTP_USER:         ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD:     ${{ secrets.SMTP_PASSWORD }}
+          APPROVAL_BASE_URL: ${{ secrets.APPROVAL_BASE_URL }}
+          # For GitHub Actions we use email-only approval (no live server)
+          # User must manually approve via email reply or by editing found_jobs.json
+        run: |
+          MODE="${{ github.event.inputs.mode || 'full' }}"
+          if [ "$MODE" = "apply-only" ]; then
+            python agents/orchestrator.py --apply-only
+          elif [ "$MODE" = "search-only" ]; then
+            python agents/orchestrator.py --search-only
+          else
+            python agents/orchestrator.py
+          fi
+
+      - name: Upload logs as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-logs-${{ github.run_number }}
+          path: data/logs/agent.log
+          retention-days: 30
+
+      - name: Upload found jobs as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: found-jobs-${{ github.run_number }}
+          path: data/jobs/found_jobs.json
+          retention-days: 30
