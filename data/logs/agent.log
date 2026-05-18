@@ -1,0 +1,385 @@
+2026-05-19 02:55:46,256 [INFO] orchestrator: Run time: 2026-05-18T22:55:46.256318 UTC
+2026-05-19 02:55:46,256 [ERROR] orchestrator: Missing env var: ANTHROPIC_API_KEY — Claude AI API key (for resume tailoring)
+2026-05-19 02:55:46,257 [ERROR] orchestrator: Missing env var: SMTP_USER — Gmail address (for approval emails)
+2026-05-19 02:55:46,257 [ERROR] orchestrator: Missing env var: SMTP_PASSWORD — Gmail App Password
+2026-05-19 02:55:46,257 [ERROR] orchestrator: Set missing variables in your .env file. See .env.example
+2026-05-19 03:01:37,303 [INFO] orchestrator: Run time: 2026-05-18T23:01:37.303836 UTC
+2026-05-19 03:01:37,304 [INFO] orchestrator: ============================================================
+2026-05-19 03:01:37,304 [INFO] orchestrator: STEP 1 — Job Search
+2026-05-19 03:01:37,305 [INFO] orchestrator: ============================================================
+2026-05-19 03:01:37,803 [INFO] li:scraper: ('Using strategy AnonymousStrategy',)
+2026-05-19 03:01:37,804 [WARNING] li:scraper: ("AnonymousStrategy is no longer maintained and it won't probably work. It is recommended to use an authenticated session, see documentation at https://github.com/spinlud/py-linkedin-jobs-scraper#anonymous-vs-authenticated-session.",)
+2026-05-19 03:01:37,804 [ERROR] orchestrator: Fatal error in orchestrator: Callback must be a function
+Traceback (most recent call last):
+  File "C:\Users\Lingaraj Rawlo\Learning\Agent-Rawlo\agents\orchestrator.py", line 208, in main
+    new_jobs = step_search()
+  File "C:\Users\Lingaraj Rawlo\Learning\Agent-Rawlo\agents\orchestrator.py", line 102, in step_search
+    searcher = JobSearcher()
+  File "C:\Users\Lingaraj Rawlo\Learning\Agent-Rawlo\agents\job_searcher.py", line 97, in __init__
+    self._register_events()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Lingaraj Rawlo\Learning\Agent-Rawlo\agents\job_searcher.py", line 100, in _register_events
+    self.scraper.on(Events.DATA, self._on_data)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lingaraj Rawlo\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\linkedin_jobs_scraper\linkedin_scraper.py", line 266, in on
+    raise ValueError('Callback must be a function')
+ValueError: Callback must be a function
+2026-05-19 03:06:28,184 [INFO] orchestrator: Run time: 2026-05-18T23:06:28.184042 UTC
+2026-05-19 03:06:28,184 [INFO] orchestrator: ============================================================
+2026-05-19 03:06:28,184 [INFO] orchestrator: STEP 1 — Job Search
+2026-05-19 03:06:28,184 [INFO] orchestrator: ============================================================
+2026-05-19 03:06:28,506 [INFO] li:scraper: ('Using strategy AnonymousStrategy',)
+2026-05-19 03:06:28,507 [WARNING] li:scraper: ("AnonymousStrategy is no longer maintained and it won't probably work. It is recommended to use an authenticated session, see documentation at https://github.com/spinlud/py-linkedin-jobs-scraper#anonymous-vs-authenticated-session.",)
+2026-05-19 03:06:28,511 [INFO] agents.job_searcher: Built 165 search queries
+2026-05-19 03:06:28,512 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['Dubai, UAE'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:06:32,133 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:52596')
+2026-05-19 03:06:34,261 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:52596/devtools/page/99EE23B39D2A89CA1E4515F09A34AFB8')
+2026-05-19 03:06:34,270 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:06:34,270 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=Dubai%2C+UAE&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:06:35,113 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Trying first selectors set')
+2026-05-19 03:06:38,525 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Trying second selectors set')
+2026-05-19 03:06:38,533 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'OK')
+2026-05-19 03:06:38,533 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Starting pagination loop')
+2026-05-19 03:06:38,542 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Found 20 jobs')
+2026-05-19 03:06:39,840 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][1]', 'Processed')
+2026-05-19 03:06:41,547 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][2]', 'Processed')
+2026-05-19 03:06:43,282 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][3]', 'Processed')
+2026-05-19 03:06:44,956 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][4]', 'Processed')
+2026-05-19 03:06:46,604 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][5]', 'Processed')
+2026-05-19 03:06:48,345 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][6]', 'Processed')
+2026-05-19 03:06:50,035 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][7]', 'Processed')
+2026-05-19 03:06:51,704 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][8]', 'Processed')
+2026-05-19 03:06:53,370 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][9]', 'Processed')
+2026-05-19 03:06:56,954 [ERROR] li:scraper: ('[DevOps Engineer][Dubai, UAE][10]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:06:58,546 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][10]', 'Processed')
+2026-05-19 03:07:00,866 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 7
+2026-05-19 03:07:02,867 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['Abu Dhabi, UAE'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:07:03,658 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:57100')
+2026-05-19 03:07:05,698 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:57100/devtools/page/1035BE5EABF05091D58011034FF6D05A')
+2026-05-19 03:07:05,701 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:07:05,702 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=Abu+Dhabi%2C+UAE&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:07:06,511 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Trying first selectors set')
+2026-05-19 03:07:09,742 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Trying second selectors set')
+2026-05-19 03:07:09,777 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'OK')
+2026-05-19 03:07:09,777 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Starting pagination loop')
+2026-05-19 03:07:09,791 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Found 23 jobs')
+2026-05-19 03:07:11,114 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][1]', 'Processed')
+2026-05-19 03:07:12,961 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][2]', 'Processed')
+2026-05-19 03:07:14,602 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][3]', 'Processed')
+2026-05-19 03:07:16,234 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][4]', 'Processed')
+2026-05-19 03:07:18,041 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][5]', 'Processed')
+2026-05-19 03:07:21,571 [ERROR] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][6]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:07:23,267 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][6]', 'Processed')
+2026-05-19 03:07:24,966 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][7]', 'Processed')
+2026-05-19 03:07:26,715 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][8]', 'Processed')
+2026-05-19 03:07:28,364 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][9]', 'Processed')
+2026-05-19 03:07:30,085 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][10]', 'Processed')
+2026-05-19 03:07:32,632 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 15
+2026-05-19 03:07:34,633 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['Sharjah, UAE'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:07:35,456 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:54189')
+2026-05-19 03:07:37,520 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:54189/devtools/page/7A38691E73E8D61443EA51150AC7D677')
+2026-05-19 03:07:37,525 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:07:37,525 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=Sharjah%2C+UAE&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:07:38,601 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Trying first selectors set')
+2026-05-19 03:07:41,883 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Trying second selectors set')
+2026-05-19 03:07:41,909 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'OK')
+2026-05-19 03:07:41,909 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Starting pagination loop')
+2026-05-19 03:07:41,924 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Found 15 jobs')
+2026-05-19 03:07:43,205 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][1]', 'Processed')
+2026-05-19 03:07:44,778 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][2]', 'Processed')
+2026-05-19 03:07:46,371 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][3]', 'Processed')
+2026-05-19 03:07:47,961 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][4]', 'Processed')
+2026-05-19 03:07:51,395 [ERROR] li:scraper: ('[DevOps Engineer][Sharjah, UAE][5]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:07:52,977 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][5]', 'Processed')
+2026-05-19 03:07:54,607 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][6]', 'Processed')
+2026-05-19 03:07:56,185 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][7]', 'Processed')
+2026-05-19 03:07:57,771 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][8]', 'Processed')
+2026-05-19 03:08:01,265 [ERROR] li:scraper: ('[DevOps Engineer][Sharjah, UAE][9]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:08:04,831 [ERROR] li:scraper: ('[DevOps Engineer][Sharjah, UAE][9]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:08:06,419 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][9]', 'Processed')
+2026-05-19 03:08:07,998 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][10]', 'Processed')
+2026-05-19 03:08:10,302 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 20
+2026-05-19 03:08:12,304 [INFO] agents.job_searcher: Reached max jobs per run (20). Stopping search.
+2026-05-19 03:08:12,310 [INFO] orchestrator: Step 1 complete. New jobs found: 20
+2026-05-19 03:08:12,310 [INFO] orchestrator: ============================================================
+2026-05-19 03:08:12,310 [INFO] orchestrator: STEP 2 — Resume Tailoring
+2026-05-19 03:08:12,311 [INFO] orchestrator: ============================================================
+2026-05-19 03:08:14,754 [ERROR] orchestrator: Fatal error in orchestrator: Base resume not found at C:\Users\Lingaraj Rawlo\Learning\Agent-Rawlo\data\resumes\base_resume.docx. Please place your resume at data/resumes/base_resume.docx
+Traceback (most recent call last):
+  File "C:\Users\Lingaraj Rawlo\Learning\Agent-Rawlo\agents\orchestrator.py", line 209, in main
+    step_tailor(new_jobs)
+    ~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Lingaraj Rawlo\Learning\Agent-Rawlo\agents\orchestrator.py", line 119, in step_tailor
+    tailor = ResumeTailor()
+  File "C:\Users\Lingaraj Rawlo\Learning\Agent-Rawlo\agents\resume_tailor.py", line 133, in __init__
+    raise FileNotFoundError(
+    ...<2 lines>...
+    )
+FileNotFoundError: Base resume not found at C:\Users\Lingaraj Rawlo\Learning\Agent-Rawlo\data\resumes\base_resume.docx. Please place your resume at data/resumes/base_resume.docx
+2026-05-19 03:09:55,634 [INFO] orchestrator: Run time: 2026-05-18T23:09:55.634697 UTC
+2026-05-19 03:09:55,635 [INFO] orchestrator: ============================================================
+2026-05-19 03:09:55,635 [INFO] orchestrator: STEP 1 — Job Search
+2026-05-19 03:09:55,635 [INFO] orchestrator: ============================================================
+2026-05-19 03:09:56,032 [INFO] li:scraper: ('Using strategy AnonymousStrategy',)
+2026-05-19 03:09:56,032 [WARNING] li:scraper: ("AnonymousStrategy is no longer maintained and it won't probably work. It is recommended to use an authenticated session, see documentation at https://github.com/spinlud/py-linkedin-jobs-scraper#anonymous-vs-authenticated-session.",)
+2026-05-19 03:09:56,035 [INFO] agents.job_searcher: Built 165 search queries
+2026-05-19 03:09:56,036 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['Dubai, UAE'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:09:56,860 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:53323')
+2026-05-19 03:09:59,059 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:53323/devtools/page/9EE25A15CEF212FB87B1A7B3F268C09C')
+2026-05-19 03:09:59,071 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:09:59,072 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=Dubai%2C+UAE&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:10:00,008 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Trying first selectors set')
+2026-05-19 03:10:03,185 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Trying second selectors set')
+2026-05-19 03:10:03,211 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'OK')
+2026-05-19 03:10:03,211 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Starting pagination loop')
+2026-05-19 03:10:03,225 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE]', 'Found 20 jobs')
+2026-05-19 03:10:04,504 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][1]', 'Processed')
+2026-05-19 03:10:06,093 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][2]', 'Processed')
+2026-05-19 03:10:07,676 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][3]', 'Processed')
+2026-05-19 03:10:09,304 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][4]', 'Processed')
+2026-05-19 03:10:10,885 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][5]', 'Processed')
+2026-05-19 03:10:12,443 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][6]', 'Processed')
+2026-05-19 03:10:14,100 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][7]', 'Processed')
+2026-05-19 03:10:15,642 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][8]', 'Processed')
+2026-05-19 03:10:17,259 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][9]', 'Processed')
+2026-05-19 03:10:20,864 [ERROR] li:scraper: ('[DevOps Engineer][Dubai, UAE][10]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:10:24,417 [ERROR] li:scraper: ('[DevOps Engineer][Dubai, UAE][10]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:10:25,995 [INFO] li:scraper: ('[DevOps Engineer][Dubai, UAE][10]', 'Processed')
+2026-05-19 03:10:28,304 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 0
+2026-05-19 03:10:30,305 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['Abu Dhabi, UAE'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:10:31,050 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:50094')
+2026-05-19 03:10:33,073 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:50094/devtools/page/89B20320412A0B78123DFA150D421E55')
+2026-05-19 03:10:33,079 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:10:33,079 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=Abu+Dhabi%2C+UAE&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:10:34,006 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Trying first selectors set')
+2026-05-19 03:10:37,337 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Trying second selectors set')
+2026-05-19 03:10:37,349 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'OK')
+2026-05-19 03:10:37,350 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Starting pagination loop')
+2026-05-19 03:10:37,361 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE]', 'Found 23 jobs')
+2026-05-19 03:10:38,642 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][1]', 'Processed')
+2026-05-19 03:10:40,299 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][2]', 'Processed')
+2026-05-19 03:10:41,933 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][3]', 'Processed')
+2026-05-19 03:10:43,559 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][4]', 'Processed')
+2026-05-19 03:10:45,305 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][5]', 'Processed')
+2026-05-19 03:10:47,022 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][6]', 'Processed')
+2026-05-19 03:10:48,859 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][7]', 'Processed')
+2026-05-19 03:10:50,646 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][8]', 'Processed')
+2026-05-19 03:10:52,602 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][9]', 'Processed')
+2026-05-19 03:10:56,132 [ERROR] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][10]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:10:57,793 [INFO] li:scraper: ('[DevOps Engineer][Abu Dhabi, UAE][10]', 'Processed')
+2026-05-19 03:11:00,111 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 1
+2026-05-19 03:11:02,112 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['Sharjah, UAE'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:11:03,005 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:64276')
+2026-05-19 03:11:05,035 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:64276/devtools/page/19BDCA5144C05D3D2724DB71A1875D52')
+2026-05-19 03:11:05,041 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:11:05,041 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=Sharjah%2C+UAE&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:11:06,021 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Trying first selectors set')
+2026-05-19 03:11:09,357 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Trying second selectors set')
+2026-05-19 03:11:09,385 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'OK')
+2026-05-19 03:11:09,385 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Starting pagination loop')
+2026-05-19 03:11:09,400 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE]', 'Found 15 jobs')
+2026-05-19 03:11:10,687 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][1]', 'Processed')
+2026-05-19 03:11:12,266 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][2]', 'Processed')
+2026-05-19 03:11:13,892 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][3]', 'Processed')
+2026-05-19 03:11:15,483 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][4]', 'Processed')
+2026-05-19 03:11:17,081 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][5]', 'Processed')
+2026-05-19 03:11:18,931 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][6]', 'Processed')
+2026-05-19 03:11:20,572 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][7]', 'Processed')
+2026-05-19 03:11:22,245 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][8]', 'Processed')
+2026-05-19 03:11:24,046 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][9]', 'Processed')
+2026-05-19 03:11:27,766 [ERROR] li:scraper: ('[DevOps Engineer][Sharjah, UAE][10]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:11:29,424 [INFO] li:scraper: ('[DevOps Engineer][Sharjah, UAE][10]', 'Processed')
+2026-05-19 03:11:31,936 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 2
+2026-05-19 03:11:33,937 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['United Arab Emirates'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:11:34,685 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:52597')
+2026-05-19 03:11:36,720 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:52597/devtools/page/9A6BB82C5CB800CB9FD433F86D9FD644')
+2026-05-19 03:11:36,734 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:11:36,735 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=United+Arab+Emirates&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:11:37,849 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates]', 'Trying first selectors set')
+2026-05-19 03:11:41,112 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates]', 'Trying second selectors set')
+2026-05-19 03:11:41,131 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates]', 'OK')
+2026-05-19 03:11:41,132 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates]', 'Starting pagination loop')
+2026-05-19 03:11:41,143 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates]', 'Found 45 jobs')
+2026-05-19 03:11:42,452 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][1]', 'Processed')
+2026-05-19 03:11:44,260 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][2]', 'Processed')
+2026-05-19 03:11:45,850 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][3]', 'Processed')
+2026-05-19 03:11:47,514 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][4]', 'Processed')
+2026-05-19 03:11:49,179 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][5]', 'Processed')
+2026-05-19 03:11:52,681 [ERROR] li:scraper: ('[DevOps Engineer][United Arab Emirates][6]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:11:54,470 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][6]', 'Processed')
+2026-05-19 03:11:56,081 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][7]', 'Processed')
+2026-05-19 03:11:57,676 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][8]', 'Processed')
+2026-05-19 03:11:59,467 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][9]', 'Processed')
+2026-05-19 03:12:01,063 [INFO] li:scraper: ('[DevOps Engineer][United Arab Emirates][10]', 'Processed')
+2026-05-19 03:12:03,366 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 2
+2026-05-19 03:12:05,368 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['Remote'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:12:06,185 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:53080')
+2026-05-19 03:12:08,225 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:53080/devtools/page/FA4839C68C4CF6F4243E94A0B703D61B')
+2026-05-19 03:12:08,229 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:12:08,229 [INFO] li:scraper: ('[DevOps Engineer][Remote]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=Remote&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:12:09,560 [INFO] li:scraper: ('[DevOps Engineer][Remote]', 'Trying first selectors set')
+2026-05-19 03:12:12,826 [INFO] li:scraper: ('[DevOps Engineer][Remote]', 'Trying second selectors set')
+2026-05-19 03:12:12,836 [INFO] li:scraper: ('[DevOps Engineer][Remote]', 'OK')
+2026-05-19 03:12:12,837 [INFO] li:scraper: ('[DevOps Engineer][Remote]', 'Starting pagination loop')
+2026-05-19 03:12:12,849 [INFO] li:scraper: ('[DevOps Engineer][Remote]', 'Found 60 jobs')
+2026-05-19 03:12:14,111 [INFO] li:scraper: ('[DevOps Engineer][Remote][1]', 'Processed')
+2026-05-19 03:12:15,997 [INFO] li:scraper: ('[DevOps Engineer][Remote][2]', 'Processed')
+2026-05-19 03:12:17,772 [INFO] li:scraper: ('[DevOps Engineer][Remote][3]', 'Processed')
+2026-05-19 03:12:19,341 [INFO] li:scraper: ('[DevOps Engineer][Remote][4]', 'Processed')
+2026-05-19 03:12:20,917 [INFO] li:scraper: ('[DevOps Engineer][Remote][5]', 'Processed')
+2026-05-19 03:12:22,937 [INFO] li:scraper: ('[DevOps Engineer][Remote][6]', 'Processed')
+2026-05-19 03:12:24,527 [INFO] li:scraper: ('[DevOps Engineer][Remote][7]', 'Processed')
+2026-05-19 03:12:26,127 [INFO] li:scraper: ('[DevOps Engineer][Remote][8]', 'Processed')
+2026-05-19 03:12:29,773 [ERROR] li:scraper: ('[DevOps Engineer][Remote][9]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:12:33,264 [ERROR] li:scraper: ('[DevOps Engineer][Remote][9]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:12:34,875 [INFO] li:scraper: ('[DevOps Engineer][Remote][9]', 'Processed')
+2026-05-19 03:12:36,444 [INFO] li:scraper: ('[DevOps Engineer][Remote][10]', 'Processed')
+2026-05-19 03:12:38,759 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 7
+2026-05-19 03:12:40,760 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['United Kingdom'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:12:41,518 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:50967')
+2026-05-19 03:12:43,538 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:50967/devtools/page/C2A4BFFA54F6B5ED3449C8251F27A8B0')
+2026-05-19 03:12:43,542 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:12:43,542 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=United+Kingdom&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:12:44,648 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom]', 'Trying first selectors set')
+2026-05-19 03:12:47,786 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom]', 'Trying second selectors set')
+2026-05-19 03:12:47,800 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom]', 'OK')
+2026-05-19 03:12:47,801 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom]', 'Starting pagination loop')
+2026-05-19 03:12:47,812 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom]', 'Found 60 jobs')
+2026-05-19 03:12:49,061 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][1]', 'Processed')
+2026-05-19 03:12:50,635 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][2]', 'Processed')
+2026-05-19 03:12:52,244 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][3]', 'Processed')
+2026-05-19 03:12:53,817 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][4]', 'Processed')
+2026-05-19 03:12:55,394 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][5]', 'Processed')
+2026-05-19 03:12:58,891 [ERROR] li:scraper: ('[DevOps Engineer][United Kingdom][6]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:13:02,487 [ERROR] li:scraper: ('[DevOps Engineer][United Kingdom][6]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:13:04,084 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][6]', 'Processed')
+2026-05-19 03:13:05,945 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][7]', 'Processed')
+2026-05-19 03:13:07,529 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][8]', 'Processed')
+2026-05-19 03:13:09,167 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][9]', 'Processed')
+2026-05-19 03:13:10,798 [INFO] li:scraper: ('[DevOps Engineer][United Kingdom][10]', 'Processed')
+2026-05-19 03:13:13,067 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 12
+2026-05-19 03:13:15,069 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['United States'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:13:15,834 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:64968')
+2026-05-19 03:13:17,868 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:64968/devtools/page/A22C352968641216180BD97A02A28AF4')
+2026-05-19 03:13:17,886 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:13:17,887 [INFO] li:scraper: ('[DevOps Engineer][United States]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=United+States&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:13:19,242 [INFO] li:scraper: ('[DevOps Engineer][United States]', 'Trying first selectors set')
+2026-05-19 03:13:22,527 [INFO] li:scraper: ('[DevOps Engineer][United States]', 'Trying second selectors set')
+2026-05-19 03:13:22,536 [INFO] li:scraper: ('[DevOps Engineer][United States]', 'OK')
+2026-05-19 03:13:22,536 [INFO] li:scraper: ('[DevOps Engineer][United States]', 'Starting pagination loop')
+2026-05-19 03:13:22,547 [INFO] li:scraper: ('[DevOps Engineer][United States]', 'Found 60 jobs')
+2026-05-19 03:13:23,814 [INFO] li:scraper: ('[DevOps Engineer][United States][1]', 'Processed')
+2026-05-19 03:13:25,393 [INFO] li:scraper: ('[DevOps Engineer][United States][2]', 'Processed')
+2026-05-19 03:13:26,969 [INFO] li:scraper: ('[DevOps Engineer][United States][3]', 'Processed')
+2026-05-19 03:13:28,538 [INFO] li:scraper: ('[DevOps Engineer][United States][4]', 'Processed')
+2026-05-19 03:13:30,143 [INFO] li:scraper: ('[DevOps Engineer][United States][5]', 'Processed')
+2026-05-19 03:13:31,726 [INFO] li:scraper: ('[DevOps Engineer][United States][6]', 'Processed')
+2026-05-19 03:13:33,312 [INFO] li:scraper: ('[DevOps Engineer][United States][7]', 'Processed')
+2026-05-19 03:13:34,905 [INFO] li:scraper: ('[DevOps Engineer][United States][8]', 'Processed')
+2026-05-19 03:13:36,544 [INFO] li:scraper: ('[DevOps Engineer][United States][9]', 'Processed')
+2026-05-19 03:13:40,318 [ERROR] li:scraper: ('[DevOps Engineer][United States][10]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:13:41,941 [INFO] li:scraper: ('[DevOps Engineer][United States][10]', 'Processed')
+2026-05-19 03:13:44,401 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 17
+2026-05-19 03:13:46,402 [INFO] li:scraper: ('Starting new query', "Query(query=DevOps Engineer options=QueryOptions(limit=10 locations=['Germany'] filters=QueryFilters(relevance=RelevanceFilters.RECENT time=TimeFilters.WEEK type=[<TypeFilters.FULL_TIME: 'F'>, <TypeFilters.CONTRACT: 'C'>] experience=[<ExperienceLevelFilters.MID_SENIOR: '4'>, <ExperienceLevelFilters.ASSOCIATE: '3'>]) apply_link=True skip_promoted_jobs=False page_offset=0))")
+2026-05-19 03:13:47,196 [INFO] li:scraper: ('Chrome debugger url', 'http://localhost:59542')
+2026-05-19 03:13:49,209 [INFO] li:scraper: ('Websocket debugger url: ', 'ws://localhost:59542/devtools/page/50635F24982DECBA365EBCC81FD64BE2')
+2026-05-19 03:13:49,216 [WARNING] li:scraper: ('[AnonymousStrategy]', 'This run strategy is no longer supported')
+2026-05-19 03:13:49,217 [INFO] li:scraper: ('[DevOps Engineer][Germany]', 'Opening https://www.linkedin.com/jobs/search?keywords=DevOps+Engineer&location=Germany&sortBy=DD&f_TPR=r604800&f_JT=F%2CC&f_E=4%2C3&start=0')
+2026-05-19 03:13:50,264 [INFO] li:scraper: ('[DevOps Engineer][Germany]', 'Trying first selectors set')
+2026-05-19 03:13:53,625 [INFO] li:scraper: ('[DevOps Engineer][Germany]', 'Trying second selectors set')
+2026-05-19 03:13:53,634 [INFO] li:scraper: ('[DevOps Engineer][Germany]', 'OK')
+2026-05-19 03:13:53,634 [INFO] li:scraper: ('[DevOps Engineer][Germany]', 'Starting pagination loop')
+2026-05-19 03:13:53,642 [INFO] li:scraper: ('[DevOps Engineer][Germany]', 'Found 60 jobs')
+2026-05-19 03:13:54,896 [INFO] li:scraper: ('[DevOps Engineer][Germany][1]', 'Processed')
+2026-05-19 03:13:56,463 [INFO] li:scraper: ('[DevOps Engineer][Germany][2]', 'Processed')
+2026-05-19 03:13:58,081 [INFO] li:scraper: ('[DevOps Engineer][Germany][3]', 'Processed')
+2026-05-19 03:13:59,656 [INFO] li:scraper: ('[DevOps Engineer][Germany][4]', 'Processed')
+2026-05-19 03:14:01,228 [INFO] li:scraper: ('[DevOps Engineer][Germany][5]', 'Processed')
+2026-05-19 03:14:04,755 [ERROR] li:scraper: ('[DevOps Engineer][Germany][6]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:14:08,349 [ERROR] li:scraper: ('[DevOps Engineer][Germany][6]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:14:09,983 [INFO] li:scraper: ('[DevOps Engineer][Germany][6]', 'Processed')
+2026-05-19 03:14:11,538 [INFO] li:scraper: ('[DevOps Engineer][Germany][7]', 'Processed')
+2026-05-19 03:14:13,170 [INFO] li:scraper: ('[DevOps Engineer][Germany][8]', 'Processed')
+2026-05-19 03:14:14,728 [INFO] li:scraper: ('[DevOps Engineer][Germany][9]', 'Processed')
+2026-05-19 03:14:18,336 [ERROR] li:scraper: ('[DevOps Engineer][Germany][10]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:14:21,892 [ERROR] li:scraper: ('[DevOps Engineer][Germany][10]', 'Timeout on loading job details')
+NoneType: None
+2026-05-19 03:14:23,548 [INFO] li:scraper: ('[DevOps Engineer][Germany][10]', 'Processed')
+2026-05-19 03:14:25,836 [INFO] agents.job_searcher: Scraping batch complete. Jobs found this run: 22
+2026-05-19 03:14:27,837 [INFO] agents.job_searcher: Reached max jobs per run (20). Stopping search.
+2026-05-19 03:14:27,844 [INFO] orchestrator: Step 1 complete. New jobs found: 22
+2026-05-19 03:14:27,844 [INFO] orchestrator: ============================================================
+2026-05-19 03:14:27,844 [INFO] orchestrator: STEP 2 — Resume Tailoring
+2026-05-19 03:14:27,844 [INFO] orchestrator: ============================================================
+2026-05-19 03:14:30,945 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:30,947 [ERROR] agents.resume_tailor: Failed to tailor resume for 4415586587: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDLjhRrGcFvD1HBVR3'}
+2026-05-19 03:14:31,646 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:31,647 [ERROR] agents.resume_tailor: Failed to tailor resume for 4414913780: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDQp21h114vWvtUwT2'}
+2026-05-19 03:14:32,392 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:32,393 [ERROR] agents.resume_tailor: Failed to tailor resume for 4414988794: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDU3zGtAb2vR71Y7WH'}
+2026-05-19 03:14:33,133 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:33,136 [ERROR] agents.resume_tailor: Failed to tailor resume for 4416008639: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDX5oAzTYqrKebCZiF'}
+2026-05-19 03:14:33,815 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:33,817 [ERROR] agents.resume_tailor: Failed to tailor resume for 4412841086: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDa8rLUhnfBg3wYsfn'}
+2026-05-19 03:14:34,643 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:34,644 [ERROR] agents.resume_tailor: Failed to tailor resume for 4414594287: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDdif8WHsTXtJoCLKL'}
+2026-05-19 03:14:35,326 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:35,328 [ERROR] agents.resume_tailor: Failed to tailor resume for 4412000885: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDgcHU4YB1PzrYhZiQ'}
+2026-05-19 03:14:36,035 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:36,036 [ERROR] agents.resume_tailor: Failed to tailor resume for 4414594287: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDjfbLQfJoVbApjhSv'}
+2026-05-19 03:14:36,716 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:36,717 [ERROR] agents.resume_tailor: Failed to tailor resume for 4412000885: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDnTGaWJZn1haQZBso'}
+2026-05-19 03:14:37,638 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:37,640 [ERROR] agents.resume_tailor: Failed to tailor resume for 4415602810: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDrX6XLag8LaTM5eHh'}
+2026-05-19 03:14:38,356 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:38,356 [ERROR] agents.resume_tailor: Failed to tailor resume for 4415603741: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDuTCx52tD7mYPCPEu'}
+2026-05-19 03:14:38,998 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:38,999 [ERROR] agents.resume_tailor: Failed to tailor resume for 4411164670: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtDxL6A5A2BeyuTTTbv'}
+2026-05-19 03:14:39,641 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:39,644 [ERROR] agents.resume_tailor: Failed to tailor resume for 4414988794: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtE15nknYViEdYSsfxs'}
+2026-05-19 03:14:40,437 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:40,438 [ERROR] agents.resume_tailor: Failed to tailor resume for 4416008639: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtE4RhdNhT2VvVM4f8V'}
+2026-05-19 03:14:41,226 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:41,227 [ERROR] agents.resume_tailor: Failed to tailor resume for 4412841086: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtE7rLJ1ruz5mYJ42Ps'}
+2026-05-19 03:14:41,911 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:41,912 [ERROR] agents.resume_tailor: Failed to tailor resume for 4413822039: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtEAnSayBq9cv3RG7HP'}
+2026-05-19 03:14:42,646 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:42,647 [ERROR] agents.resume_tailor: Failed to tailor resume for 4416259951: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtEDqFAptdo53xMxtTv'}
+2026-05-19 03:14:43,317 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:43,318 [ERROR] agents.resume_tailor: Failed to tailor resume for 4399546860: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtEGnbW1kvahLAPhXA3'}
+2026-05-19 03:14:43,947 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:43,949 [ERROR] agents.resume_tailor: Failed to tailor resume for 4412008845: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtEKUpmAosRyL1QAp42'}
+2026-05-19 03:14:44,611 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:44,612 [ERROR] agents.resume_tailor: Failed to tailor resume for 4412292715: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtENJypeG5WkbtRyycC'}
+2026-05-19 03:14:45,558 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:45,560 [ERROR] agents.resume_tailor: Failed to tailor resume for 4411177854: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtERv2MWsWGXrTZzxMG'}
+2026-05-19 03:14:46,319 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-05-19 03:14:46,322 [ERROR] agents.resume_tailor: Failed to tailor resume for 4413869282: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CbAtEVc2gbLAUNPpcdCs7'}
+2026-05-19 03:14:46,363 [INFO] orchestrator: Step 2 complete. Tailored 0 resumes.
+2026-05-19 03:14:46,363 [INFO] orchestrator: ============================================================
+2026-05-19 03:14:46,363 [INFO] orchestrator: STEP 3 — Approval Notifications
+2026-05-19 03:14:46,364 [INFO] orchestrator: ============================================================
+2026-05-19 03:15:43,627 [INFO] orchestrator: Step 3 complete. Sent 22 approval emails to raulo.raj@gmail.com
+2026-05-19 03:15:43,628 [INFO] orchestrator: ============================================================
+2026-05-19 03:15:43,628 [INFO] orchestrator: STEP 4 — Apply to Approved Jobs
+2026-05-19 03:15:43,628 [INFO] orchestrator: ============================================================
+2026-05-19 03:15:43,662 [INFO] agents.application_agent: Found 0 approved jobs to apply to.
+2026-05-19 03:15:43,662 [INFO] orchestrator: Step 4 complete. Applied to 0/0 jobs.

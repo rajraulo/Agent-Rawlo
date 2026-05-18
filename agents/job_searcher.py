@@ -97,9 +97,9 @@ class JobSearcher:
         self._register_events()
 
     def _register_events(self):
-        self.scraper.on(Events.DATA, self._on_data)
-        self.scraper.on(Events.ERROR, self._on_error)
-        self.scraper.on(Events.END, self._on_end)
+        self.scraper.on(Events.DATA, lambda data: self._on_data(data))
+        self.scraper.on(Events.ERROR, lambda error: self._on_error(error))
+        self.scraper.on(Events.END, lambda: self._on_end())
 
     def _on_data(self, data: EventData):
         job = {
